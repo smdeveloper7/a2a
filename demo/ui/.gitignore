@@ -1,0 +1,51 @@
+# Python 가상환경
+.venv/
+env/
+venv/
+
+# 환경 설정 파일
+.env
+.python-version
+
+# 파이썬 캐시 파일
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 임시 디렉토리
+tmp/
+temp/
+*.log
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints/
+
+# VSCode 설정
+.vscode/
+
+# macOS, Windows 시스템 파일
+.DS_Store
+Thumbs.db
+
+# pip wheel cache
+*.egg-info/
+dist/
+build/
+
+# 테스트 결과
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# mypy, pyright, pylint 등 정적 분석 도구
+.mypy_cache/
+.pyright/
+.pyre/
+.pytype/
+pylint-report.txt
+
+# 기타
+*.sqlite3
