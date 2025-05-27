@@ -45,7 +45,6 @@ class LangGraphAgentExecutor(AgentExecutor):
 
         try:
             async for item in self.agent.stream(query, task.contextId):
-                print("query")
                 is_task_complete = item.get("is_task_complete", False)
                 require_user_input = item.get("require_user_input", False)
                 content = item.get("content", "")

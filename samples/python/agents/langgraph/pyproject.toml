@@ -12,12 +12,10 @@ dependencies = [
     "langgraph>=0.3.18",
     "pydantic>=2.10.6",
     "python-dotenv>=1.1.0",
+    "tavily-python"
 ]
 
-[project.optional-dependencies]
-web_agent = [
-    "tavily-python", "feedparser"
-]
+
 
 
 [tool.hatch.build.targets.wheel]
