@@ -47,7 +47,6 @@ class HostAgent:
         for address in remote_agent_addresses:
             card_resolver = A2ACardResolver(http_client, address)
             card = card_resolver.get_agent_card()
-            print(card)
             remote_connection = RemoteAgentConnections(http_client, card)
             self.remote_agent_connections[card.name] = remote_connection
             self.cards[card.name] = card
@@ -58,6 +57,7 @@ class HostAgent:
 
     def register_agent_card(self, card: AgentCard):
         remote_connection = RemoteAgentConnections(self.httpx_client, card)
+        print(card)
         self.remote_agent_connections[card.name] = remote_connection
         self.cards[card.name] = card
         agent_info = []
@@ -66,6 +66,7 @@ class HostAgent:
         self.agents = '\n'.join(agent_info)
 
     def create_agent(self) -> Agent:
+        print('Creating host agent with remote agents:')
         return Agent(
             model='gemini-2.0-flash-001',
             name='host_agent',

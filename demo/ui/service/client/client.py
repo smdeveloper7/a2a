@@ -36,6 +36,7 @@ class ConversationClient:
     async def send_message(
         self, payload: SendMessageRequest
     ) -> SendMessageResponse:
+        
         return SendMessageResponse(**await self._send_request(payload))
 
     async def _send_request(self, request: JSONRPCRequest) -> dict[str, Any]:

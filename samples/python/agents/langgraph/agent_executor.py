@@ -39,7 +39,10 @@ class LangGraphAgentExecutor(AgentExecutor):
             raise ServerError(error=InvalidParamsError())
 
         query = context.get_user_input()
+        print(f"query: {query}")
+    
         task = context.current_task or new_task(context.message)
+        print(f"task: {task}")
         event_queue.enqueue_event(task)
         updater = TaskUpdater(event_queue, task.id, task.contextId)
 
